@@ -7,5 +7,24 @@ redirect_from: /
 {% block title %}CS70 Feedback{% endblock %}
 
 {% block body %}
-
+<main class="forms-cont wrap-container">
+  <div class="wrap">
+    <p class="sf-back"><a href="http://eecs70.org"><span class="sf-back-arr">&larr;</span> back</a></p>
+    <h1>Feedback Center</h1>
+    <p class="sp-byline">Please give us feedback! We're keen to hear what you have to say. We have three types of feedback: Staff, Experiment, and Individual.</p>
+    {% if forms | length == 0 %}
+    <span class="button faded">No forms available</span>
+    {% else %}
+    <div class="select">
+        <span class="arrow-down"></span>
+      <li class="select-default"><span>Select a Form</span></li>
+      <ul class="options">
+        {% for form in forms %}
+        <li><a href="{{ form.url }}" class="button">{{ form.name }}<span class="byline">{{ form.byline }}</span></a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</main>
 {% endblock %}

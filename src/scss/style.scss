@@ -77,88 +77,139 @@ header {
     .header-title span {
       font-weight:300;
     }
-.tasks-cont {
-    padding:7em 3.5em;
+.forms-cont {
+    padding:10em 3.5em;
     text-align:center;
 
-    .wrap {
-        float:none;
+    h1 {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 2em;
+    }
+
+    .select {
+        width:22.5em;
+    }
+}
+.button,div.select,.options a {
+  display:inline-block;
+  border:2px solid #000;
+  color:#000;
+  text-transform:uppercase;
+  padding: 1.75em 3em;
+  font-size:0.8em;
+  letter-spacing:0.25em;
+  margin-top:0.5em;
+  background-color:#FFF;
+}
+  .button.faded {
+    border:2px solid #ccc;
+    color:#ccc;
+  }
+  .button:not(.faded):hover,div.select:hover,div.select.s {
+    color:#FFF;
+    background-color:#000;
+    text-decoration:none;
+  }
+  div.select {
+    padding-right:5em;
+    position:relative;
+    text-align:left;
+    cursor:pointer;
+  }
+  .colored .select {
+    background-color:transparent;
+    border:2px solid #FFF;
+    color:#FFF;
+  }
+    .colored .select .arrow-down {
+      border-bottom:1px solid #FFF;
+      border-right:1px solid #FFF;
+    }
+    .colored .select:hover {
+      background-color:#FFF;
+      color:inherit;
+    }
+    .colored .select:hover .arrow-down,.colored .select.s .arrow-down {
+      border-bottom:1px solid #000;
+      border-right:1px solid #000;
+    }
+  .arrow-down {
+    position:absolute;
+    width:0.5em;
+    height:0.5em;
+    border-bottom:1px solid #333;
+    border-right:1px solid #333;
+    -webkit-transform:  rotate(45deg);
+    -moz-transform:     rotate(45deg);
+    -o-transform:       rotate(45deg);
+    transform:          rotate(45deg);
+    right:3em;
+    top:2em;
+  }
+    .select:hover .arrow-down,.select.s .arrow-down {
+      border-bottom:1px solid #fff;
+      border-right:1px solid #fff;
+    }
+    .select.s .arrow-down {
+      -webkit-transform:  rotate(225deg);
+      -moz-transform:     rotate(225deg);
+      -o-transform:       rotate(225deg);
+      transform:          rotate(225deg);
+    }
+  div.select li {
+    list-style:none;
+
+    span.byline {
+        clear:both;
+        text-transform:none;
+        letter-spacing:0;
+        margin-top:0.5em;
+        width:100%;
         display:inline-block;
-        text-align:center;
-        width:90%;
-        max-width:40em;
-
-        h1 {
-            font-weight:600;
-            text-transform:uppercase;
-            font-size:2em;
-        }
     }
-
-    .divider {
-        width:100%;
-        border-bottom:1px solid #eee;
-        padding:1.5em 1em 0.5em 1em;
-        color:#c9c9c9;
+  }
+    .select.s ul {
+      height:auto;
+    }
+  .select ul {
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background-color:#FFF;
+    padding:0;
+    margin-top:2px;
+    max-height:10em;
+    overflow-y:scroll;
+    box-shadow:0 0 1em 0 rgba(0,0,0,0.2);
+    height:0;
+  }
+  .select .options a {
+    border:none;
+    color:#666;
+    width:100%;
+    font-size:1em;
+    margin-top:0;
+  }
+    .select .options a:hover {
+      color:#FFF;
+      background-color:#999;
+    }
+  .select li + li {
+    border-top:1px solid #eee;
+  }
+.sp-byline {
+    margin:1em 0 1.5em 0;
+}
+.sf-back {
+    a {
         text-transform:uppercase;
-        font-size:0.9em;
-        letter-spacing:0.1em;
-        float:left;
+        color:#999;
     }
 
-    .task {
-        width:100%;
-        background-color:#FFF;
-        box-shadow:0 0 0.25em 0 rgba(0,0,0,0.2);
-        float:left;
-        padding:0.75em 1em;
-        margin-top:1em;
-        text-align:left;
-
-        input {
-            padding:0.5em;
-            z-index:15;
-        }
-
-        span {
-            float:left;
-        }
-
-        .name {
-            margin:0 0 0 1em;
-        }
-
-        .byline {
-            font-size:0.8em;
-            color:#c90;
-            text-align:left;
-            margin:0 0 0 1em;
-        }
-
-        .inactive-bar {
-            width:105%;
-            left:-2.5%;
-            position:absolute;
-            top:1.5em;
-            height:2px;
-            background-color:rgba(0,0,0,0.15);
-            display:block;
-            z-index:10;
-            display:none;
-        }
-
-        .text {
-            width: calc(100% - 1em);
-            float:right;
-        }
-    }
-
-    .task.inactive {
-        opacity:0.75;
-        color:#ccc;
-
-        .inactive-bar {
-            display:block;
-        }
+    a:hover {
+        color:#000;
+        border-bottom:1px dotted #000;
     }
 }
